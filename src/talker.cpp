@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 
   ros::NodeHandle n;
 
-  ros::Publisher chatter_pub = n.advertise<geometry_msgs::Point>("vision", 1000);
+  ros::Publisher chatter_pub = n.advertise<geometry_msgs::Point>("vision", 1);
 
 
 
