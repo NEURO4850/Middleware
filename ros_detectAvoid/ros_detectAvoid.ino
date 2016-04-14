@@ -100,11 +100,11 @@ void checkDir() {
     //y = 0;
     myMotor->step(50, 0, DOUBLE);
     long sideCM = getDist();
-    if (sideCM < 20) {
+    if (sideCM < 35) {
       myMotor->step(100, 1, DOUBLE);
       sideCM = getDist();
       myMotor->step(50, 0, DOUBLE);
-      if (sideCM < 20) {
+      if (sideCM < 35) {
         p.x *= -1;
         p.y *= -1;
       } else {
