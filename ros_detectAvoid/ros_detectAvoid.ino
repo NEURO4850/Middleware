@@ -28,9 +28,7 @@ double backAngle;
 void visionCallback( const geometry_msgs::Point& msgIn)
 {
   nh.loginfo("Recieved From Vision Group");
-  //p.x=0;
-  //p.y=0;
-  //p.z=0;
+  p = msgIn;
   detectAvoid();
 
   motorSend.publish( &p);
@@ -102,11 +100,11 @@ void checkDir() {
     //y = 0;
     myMotor->step(50, 0, DOUBLE);
     long sideCM = getDist();
-    if (sideCM < 50) {
+    if (sideCM < 20) {
       myMotor->step(100, 1, DOUBLE);
       sideCM = getDist();
       myMotor->step(50, 0, DOUBLE);
-      if (sideCM < 50) {
+      if (sideCM < 20) {
         p.x *= -1;
         p.y *= -1;
       } else {
